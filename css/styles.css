@@ -157,6 +157,7 @@ section img {
   }
  
   nav li a { color: #fbf3ef;}
+  
   svg { margin: 0; }
   svg path{ fill: #fbf3ef; }
 
@@ -177,13 +178,57 @@ section img {
     flex: 1 1 25%; /**flex-grow | flex-shrink | flex-basis**/
   }
 
+  /** main body content **/
 
+  .inner-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /** gap: 1rem; **/
+    /** only puts spacing in-between your flex-items**/
+  }
 
+  /** let's have a maximum of two cards per row **/
 
+  /** flex-items**/
+  .col {
+    max-width: calc(100% / 2 - 2rem);
+    margin: 1rem;
 
+  }
 
+  /** The columns that have a bit more text/copy - we are going to give them more breathing room **/
+  .grow {
+    /**longhand**/
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 65%;
+    /**shorthand **/
+    flex: 1 0 65%; /** grow | shrink | flex-basis */
+  }
+
+  /** here we will make the the columns with less text shrink **/
+  .shrink {
+    flex: 0 1 35%;
+  }
+
+} /** //end of 925px**/
+
+/** restricts the overall width (fixed-width layout) **/
+@media screen and (min-width: 1280px) {
+  nav ul,
+  .inner-container {
+    max-width: 80rem; /**1280px / 16 = 80**/
+    margin: 0 auto;
+  }
 
 }
+/*
+shorthand for margins
+margin: top right bottom left;
+margin: top left/right bottom;
+margin top/bottom & left/right;
+*/
 
 
 
